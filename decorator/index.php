@@ -8,4 +8,4 @@ use SiteTitle\BaseTitle;
 use SiteTitle\NewLineTitleDecorator;
 
 // wrap the base title with as many decorators as you like
-echo (new NewLineTitleDecorator(new HomepageTitleDecorator(new BaseTitle)))->getTitle();
+echo (new NewLineTitleDecorator(new HomepageTitleDecorator(new BaseTitle())))->getTitle();

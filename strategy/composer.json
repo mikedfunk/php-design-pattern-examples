@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "MikeFunk\\": "src/MikeFunk/"
+    }
+  },
+  "require": {
+    "symfony/dependency-injection": "~2.6"
+  }
+}
