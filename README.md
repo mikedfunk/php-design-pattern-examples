@@ -29,3 +29,15 @@ that implementation.
 This example admittedly goes a little farther than it needs to by also applying
 the service container pattern, but it shows an important usage: binding the
 default implementation in the service container.
+
+## Observer
+`composer dump autoload` to set up the autoloader.
+
+This uses PHP's SplObserver interface, SplSubject interface, and 
+SplObjectStorage class. to detach by matching object.
+
+In this example the `App` class is a subject which defines all of the required
+methods in `SplSubject`. The LoggerObserver likewise implements `SplObserver`.
+In index.php we setup the App class, attach an observer, and notify all
+observers after handling the request. This lets the observer log that I have
+visited the page.
