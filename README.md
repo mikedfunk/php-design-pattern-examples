@@ -31,7 +31,7 @@ the service container pattern, but it shows an important usage: binding the
 default implementation in the service container.
 
 ## Observer
-`composer dump autoload` to set up the autoloader.
+`composer dump autoload` to set up the autoloader in this example.
 
 This uses PHP's SplObserver interface, SplSubject interface, and 
 SplObjectStorage class. to detach by matching object.
@@ -41,3 +41,19 @@ methods in `SplSubject`. The LoggerObserver likewise implements `SplObserver`.
 In index.php we setup the App class, attach an observer, and notify all
 observers after handling the request. This lets the observer log that I have
 visited the page.
+
+## Template Method
+`composer install` to install symfony components used in this example and set
+up autoloader. This one uses [phpspec](http://phpspec.org) for unit testing.
+
+This example uses a gun template class which offers the default functionality of
+returning "Bang!" when the `fire()` method is called. There are two different
+types of child gun classes defined - a bolt-action rifle and a pump-action
+shotgun. They each have their own way of ejecting the shell and chambering a
+new round via `ejectAndChamber()`. Maybe not the best example but it
+illustrates the point.
+
+The `Gun` abstract class provides the template for the other guns to specialize
+from. Gun cannot be instantiated - only an extension of it can be. It provides
+default functionality to any child that extends it. This defines the template
+method pattern.
